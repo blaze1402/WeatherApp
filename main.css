@@ -1,3 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
+
 @tailwind base;
+@layer base {
+
+    /* Resetting the base style while disabling the preflight(TW own style) in config file */
+
+    *,
+    ::before,
+    ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    li {list-style: none;}
+
+    a,
+    img,
+    span,
+    input,
+    button { display: block;}
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img { height: auto;}
+
+    input,
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        font: inherit;
+    }
+
+    input {width: 100%;}
+
+    button {cursor: pointer;}
+
+    sub {vertical-align: baseline;}
+
+    sup {vertical-align: top;}
+
+    sub, sup {font-size: 0.75rem;}
+
+    /* Applying the custom base style for the project using css as well as twcss classes */
+
+    html {
+        @apply font-primary;
+        font-size: 10px;
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-background;
+        @apply text-on_background;
+        @apply text-body_3;
+        @apply overflow-hidden;
+    }
+
+    :focus-visible {
+        @apply outline-2 outline text-white;
+        @apply outline-offset-2;
+    }
+
+    ::selection {@apply text-white_alpha_8;}
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply text-white_alpha_8;
+        @apply rounded-radius_pill;
+    }
+
+    @font-face {
+        font-family: 'Material Symbols Rounded';
+        font-style: normal;
+        font-weight: 400;
+        src: url(/assets/font/material-symbol-rounded.woff2) format('woff2');
+    }
+
+    .m-icon {
+        font-family: 'Material Symbols Rounded';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2.4rem;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+        height: 1em;
+        width: 1em;
+        overflow: hidden;
+    }
+}
 @tailwind components;
 @tailwind utilities;
