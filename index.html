@@ -14,6 +14,146 @@
     <script src="/assets/js/route.js" type="module"></script>
 </head>
 <body>
-    <p class="text-3xl">Hello World</p>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container max-w-screen-2xl w-full p-4 flex items-center justify-between">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" width="150px" alt="">
+            </a>
+            
+            <div class="search-view" data-search-view>
+                <div class="search-wrapper">
+                    <input type="search" name="search" placeholder="Search city ..." autocomplete="off" class="search-field" data-search-field>
+                    <span class="m-icon">search</span>
+
+                    <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+                        <span class="m-icon">arrow_back</span>
+                    </button>
+                </div>
+
+                <div class="search-result" data-search-result>
+                    <ul class="view-list" data-search-list>
+                        <li class="view-item">
+                            <span class="m-icon text-on_surface_variant">location_on</span>
+                            <div>
+                                <p class="item-title">London</p>
+                                <p class="item-subtitle text-on_surface_variant">State of London, GB</p>
+                            </div>
+                            <a href="#" class="item-link has-state absolute inset-0 " data-search-toggler></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="header-actions flex items-center gap-8">
+                <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
+                    <span class="m-icon icon">search</span>
+                </button>
+                <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+                    <span class="m-icon">my_location</span>
+                    <span class="font-semibold hidden">Current Location</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <article class="container p-5">
+
+            <div class="content-left">
+
+                <!-- Current Weather -->
+                <section class="section current-weather" aria-label="current weather" data-current-weather>
+                    <div class="card card-lg current-weather-card">
+                        <h2 class="title-2 card-title">Now</h2>
+                        <div class="wrapper">
+                            <p class="heading">25<sup>&deg;c</sup></p>
+                            <img src="/assets/images/weather_icons/01d.png" width="64" alt="Overcast Clouds" class="weather-icon">
+                        </div>
+                        <p class="body-3">Overcast Clouds</p>
+                        <ul class="meta-list">
+                            <li class="meta-item">
+                                <span class="m-icon text-on_surface">calendar_today</span>
+                                <p class="title-3 meta-text">Thursday 16, Mar</p>
+                            </li>
+                            <li class="meta-item">
+                                <span class="m-icon text-on_surface">location_on</span>
+                                <p class="title-3 meta-text">London, GB</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!-- FORECAST -->
+                <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast>
+                    <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+                    <div class="card card-lg forecast-card">
+                        <ul>
+                            <li class="card-item">
+                                <div class="icon-wrapper">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <span class="">
+                                        <p class="title-2">25</p>
+                                    </span>
+                                </div>
+                                <p class="label-1">17 Mar</p>
+                                <p class="label-1">Friday</p>
+                            </li>
+                            <li class="card-item">
+                                <div class="icon-wrapper">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <span class="">
+                                        <p class="title-2">25</p>
+                                    </span>
+                                </div>
+                                <p class="label-1">17 Mar</p>
+                                <p class="label-1">Friday</p>
+                            </li>
+                            <li class="card-item">
+                                <div class="icon-wrapper">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <span class="">
+                                        <p class="title-2">25</p>
+                                    </span>
+                                </div>
+                                <p class="label-1">17 Mar</p>
+                                <p class="label-1">Friday</p>
+                            </li>
+                            <li class="card-item">
+                                <div class="icon-wrapper">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <span class="">
+                                        <p class="title-2">25</p>
+                                    </span>
+                                </div>
+                                <p class="label-1">17 Mar</p>
+                                <p class="label-1">Friday</p>
+                            </li>
+                            <li class="card-item">
+                                <div class="icon-wrapper">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <span class="">
+                                        <p class="title-2">25</p>
+                                    </span>
+                                </div>
+                                <p class="label-1">17 Mar</p>
+                                <p class="label-1">Friday</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+
+
+            </div>
+
+            
+        </article>
+    </main>
+
 </body>
 </html>
