@@ -129,43 +129,44 @@
         100% {clip-path: circle(100% at 50% 50%)}
     }
 
-    .btn-primary {
+    /* MAY NOT WORK PROPERPLY */
+    /* .btn-primary {
         @apply bg-primary text-on_primary h-16 leading-[4rem] max-w-fit flex items-center gap-8 rounded-radius_pill;
         padding-inline: 16px;
-    }
+    } */
 
     .btn-primary[disabled] {@apply bg-outline text-on_surface_variant cursor-not-allowed;}
 
     .btn-primary[disabled]::before {@apply hidden;}
 
-    .card {@apply bg-surface text-on_surface;}
+    /* .card {@apply bg-surface text-on_surface;} */
 
-    .card-lg {@apply rounded-radius_28 p-9;}
+    /* .card-lg {@apply rounded-radius_28 p-9;} */
 
-    .card-sm {@apply rounded-radius_16 p-8;}
+    /* .card-sm {@apply rounded-radius_16 p-8;} */
 
-    .heading {@apply text-white text-heading leading-[1.1];}
+    /* .heading {@apply text-white text-heading leading-[1.1];} */
 
-    .title-1 {@apply text-title_1;}
+    /* .title-1 {@apply text-title_1;} */
 
-    .title-2 {
+    /* .title-2 {
         @apply text-title_2;
         margin-block-end: 12px;
-    }
+    } */
 
-    .title-3 {@apply text-title_3 font-semibold;}
+    /* .title-3 {@apply text-title_3 font-semibold;} */
 
-    .body-1{@apply text-body_1;}
-    .body-2{@apply text-body_2 font-semibold;}
-    .body-3{@apply text-body_3;}
+    /* .body-1{@apply text-body_1;} */
+    /* .body-2{@apply text-body_2 font-semibold;} */
+    /* .body-3{@apply text-body_3;} */
 
-    .label-1 {@apply text-label_1}
-    .label-2 {@apply text-label_2}
+    /* .label-1 {@apply text-label_1} */
+    /* .label-2 {@apply text-label_2} */
 
 
 
     /* HEADER */
-    .header .btn-primary {padding-inline: 8px;}
+    /* .header .btn-primary {padding-inline: 8px;} */
 
     .search-view {
         @apply fixed top-0 left-0 w-full h-screen sm:h-[100svh] bg-surface text-on_surface opacity-0 invisible  z-40;
@@ -258,7 +259,7 @@
 
     .current-weather-card .weather-icon {margin-inline: auto;}
 
-    .current-weather-card > .body-3 {@apply capitalize;}
+    /* .current-weather-card > .body-3 {@apply capitalize;} */
 
     .current-weather-card .meta-list {
         margin-block-start: 16px;
@@ -274,7 +275,7 @@
 
 
     /* FORECAST */
-    .forecast-card .title-2 {margin-block-end: 0;}
+    /* .forecast-card .title-2 {margin-block-end: 0;} */
 
     .forecast-card :is(.card-item, .icon-wrapper) {@apply flex items-center}
 
@@ -282,10 +283,44 @@
     
     .forecast-card .icon-wrapper {@apply gap-6}
 
-    .forecast-card .label-1 {@apply text-on_surface_variant font-semibold}
+    /* .forecast-card .label-1 {@apply text-on_surface_variant font-semibold} */
 
-    .forecast-card .card-item > .label-1 {@apply w-full text-right}
+    /* .forecast-card .card-item > .label-1 {@apply w-full text-right} */
 
+
+    /* TODAY'S HIGHLIGHTS */
+    .highlights .m-icon {font-size: 3.2rem;}
+
+    .highlight-list {@apply grid gap-9}
+
+    /* .highlight-list .title-3 {
+        @apply text-on_surface_variant;
+        margin-block-end: 20px;
+    } */
+
+    /* .highlights .card-sm {@apply bg-black_alpha_10 relative;} */
+
+    .highlight-card :is(.wrapper, .card-list, .card-item) {@apply flex items-center;}
+
+    .highlight-card .wrapper {@apply justify-between gap-8;}
+
+    .highlight-card .card-list {@apply flex-wrap flex-grow gap-y-6 ;}
+
+    .highlight-card .card-item {@apply w-1/2 justify-end gap-5;}
+
+    /* .highlight-card .label-1 {@apply text-on_surface_variant;} */
+
+    .badge {@apply absolute top-8 right-8 py-1 px-4 rounded-radius_pill font-semibold cursor-help;}
+
+    .badge.aqi-1 {@apply bg-bg_aqi_1 text-on_bg_aqi_1;}
+    .badge.aqi-2 {@apply bg-bg_aqi_2 text-on_bg_aqi_2;}
+    .badge.aqi-3 {@apply bg-bg_aqi_3 text-on_bg_aqi_3;}
+    .badge.aqi-4 {@apply bg-bg_aqi_4 text-on_bg_aqi_4;}
+    .badge.aqi-5 {@apply bg-bg_aqi_5 text-on_bg_aqi_5;}
+
+    .highlight-card.two .card-item {@apply justify-start flex-wrap gap-y-6 gap-x-8;}
+
+    /* .highlight-card.two .label-1 {margin-block-end: 4px;} */
 
 
 

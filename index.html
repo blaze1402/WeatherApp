@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App | Vijay Kumar Singh</title>
+    <title>WeatherIO App | Vijay Kumar Singh</title>
     <meta name="title" content="Weather App | Vijay Kumar Singh">
-    <meta name="description" content="This Weather app is developed by using tailwind and plain javascript developed by Vijay Kumar Singh">
+    <meta name="description"
+        content="This Weather app is developed by using tailwind and plain javascript developed by Vijay Kumar Singh">
     <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
 
     <script src="/assets/js/app.js" type="module"></script>
     <script src="/assets/js/route.js" type="module"></script>
 </head>
-<body>
+
+<body class="overflow-auto">
 
     <!-- Header -->
     <header class="header">
@@ -21,10 +24,11 @@
             <a href="#" class="logo">
                 <img src="assets/images/logo.png" width="150px" alt="">
             </a>
-            
+
             <div class="search-view" data-search-view>
                 <div class="search-wrapper">
-                    <input type="search" name="search" placeholder="Search city ..." autocomplete="off" class="search-field" data-search-field>
+                    <input type="search" name="search" placeholder="Search city ..." autocomplete="off"
+                        class="search-field" data-search-field>
                     <span class="m-icon">search</span>
 
                     <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
@@ -47,11 +51,11 @@
 
             </div>
 
-            <div class="header-actions flex items-center gap-8">
+            <div class="header-actions flex items-center gap-4">
                 <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
                     <span class="m-icon icon">search</span>
                 </button>
-                <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+                <a href="#/current-location" class="btn-primary bg-primary text-on_primary rounded-radius_circle p-3 has-state" data-current-location-btn>
                     <span class="m-icon">my_location</span>
                     <span class="font-semibold hidden">Current Location</span>
                 </a>
@@ -67,21 +71,22 @@
 
                 <!-- Current Weather -->
                 <section class="section current-weather" aria-label="current weather" data-current-weather>
-                    <div class="card card-lg current-weather-card">
-                        <h2 class="title-2 card-title">Now</h2>
+                    <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9 current-weather-card">
+                        <h2 class="text-title_2 mb-5 card-title">Now</h2>
                         <div class="wrapper">
-                            <p class="heading">25<sup>&deg;c</sup></p>
-                            <img src="/assets/images/weather_icons/01d.png" width="64" alt="Overcast Clouds" class="weather-icon">
+                            <p class="text-white text-heading leading-[1.1]">25&deg;<sup class="text-7xl">c</sup></p>
+                            <img src="/assets/images/weather_icons/01d.png" width="64" alt="Overcast Clouds"
+                                class="weather-icon">
                         </div>
-                        <p class="body-3">Overcast Clouds</p>
+                        <p class="text-body_3">Overcast Clouds</p>
                         <ul class="meta-list">
                             <li class="meta-item">
                                 <span class="m-icon text-on_surface">calendar_today</span>
-                                <p class="title-3 meta-text">Thursday 16, Mar</p>
+                                <p class="text-title_3 font-semibold meta-text">Thursday 16, Mar</p>
                             </li>
                             <li class="meta-item">
                                 <span class="m-icon text-on_surface">location_on</span>
-                                <p class="title-3 meta-text">London, GB</p>
+                                <p class="text-title_3 font-semibold meta-text">London, GB</p>
                             </li>
                         </ul>
                     </div>
@@ -90,58 +95,63 @@
 
                 <!-- FORECAST -->
                 <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast>
-                    <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
-                    <div class="card card-lg forecast-card">
+                    <h2 class="text-title_2 mb-5" id="forecast-label">5 Days Forecast</h2>
+                    <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9 forecast-card">
                         <ul>
                             <li class="card-item">
                                 <div class="icon-wrapper">
-                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
+                                        class="weather-icon">
                                     <span class="">
-                                        <p class="title-2">25</p>
+                                        <p class="text-title_2">25&deg;</p>
                                     </span>
                                 </div>
-                                <p class="label-1">17 Mar</p>
-                                <p class="label-1">Friday</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">Friday</p>
                             </li>
                             <li class="card-item">
                                 <div class="icon-wrapper">
-                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
+                                        class="weather-icon">
                                     <span class="">
-                                        <p class="title-2">25</p>
+                                        <p class="text-title_2">25&deg;</p>
                                     </span>
                                 </div>
-                                <p class="label-1">17 Mar</p>
-                                <p class="label-1">Friday</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">Friday</p>
                             </li>
                             <li class="card-item">
                                 <div class="icon-wrapper">
-                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
+                                        class="weather-icon">
                                     <span class="">
-                                        <p class="title-2">25</p>
+                                        <p class="text-title_2">25&deg;</p>
                                     </span>
                                 </div>
-                                <p class="label-1">17 Mar</p>
-                                <p class="label-1">Friday</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">Friday</p>
                             </li>
                             <li class="card-item">
                                 <div class="icon-wrapper">
-                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
+                                        class="weather-icon">
                                     <span class="">
-                                        <p class="title-2">25</p>
+                                        <p class="text-title_2">25&deg;</p>
                                     </span>
                                 </div>
-                                <p class="label-1">17 Mar</p>
-                                <p class="label-1">Friday</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">Friday</p>
                             </li>
                             <li class="card-item">
                                 <div class="icon-wrapper">
-                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds" class="weather-icon">
+                                    <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
+                                        class="weather-icon">
                                     <span class="">
-                                        <p class="title-2">25</p>
+                                        <p class="text-title_2">25&deg;</p>
                                     </span>
                                 </div>
-                                <p class="label-1">17 Mar</p>
-                                <p class="label-1">Friday</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
+                                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">Friday</p>
                             </li>
                         </ul>
                     </div>
@@ -151,9 +161,116 @@
 
             </div>
 
-            
+            <div class="content-right">
+
+                <!-- TODAY'S HIGHLIGHTS -->
+                <section class="section highlights" aria-labelledby="highlights-label" data-highlights>
+                    <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9">
+                        <h2 class="text-title_2 mb-5" id="highlights-label">Today's Highlights</h2>
+                        <div class="highlight-list">
+                            <div class="card bg-surface text-on_surface highlight-card one">
+                                <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                                    <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Air Quality Index</h3>
+                                    <div class="wrapper">
+                                        <span class="m-icon">air</span>
+                                        <ul class="card-list w-min">
+                                            <li class="card-item">
+                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
+                                            </li>
+
+                                            <li class="card-item">
+                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
+                                            </li>
+
+                                            <li class="card-item">
+                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
+                                            </li>
+
+                                            <li class="card-item">
+                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <span class="badge aqi-1 text-label_1" title="aqi message">Good</span>
+                                </div>
+                            </div>
+
+                            <div class="card bg-surface text-on_surface highlight-card two">
+                                <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                                    <h2 class="text-title_3 font-semibold text-on_surface_variant mb-5">Sunrise & Sunset</h2>
+                                    <div class="card-list">
+                                        <div class="card-item">
+                                            <span class="m-icon">clear_day</span>
+                                            <div>
+                                                <p class="text-label_1 text-on_surface_variant mb-1">Sunrise</p>
+                                                <p class="text-title_1">6:30 AM</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-item">
+                                            <span class="m-icon">clear_night</span>
+                                            <div>
+                                                <p class="text-label_1 text-on_surface_variant mb-1">Sunset</p>
+                                                <p class="text-title_1">5:54 PM</p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-surface text-on_surface highlight-card">
+                                <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                                    <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Humidity</h3>
+                                    <div class="wrapper">
+                                        <span class="m-icon">humidity_percentage</span>
+                                        <p class="text-title_1">35<sub>%</sub></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-surface text-on_surface highlight-card">
+                                <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                                    <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Pressure</h3>
+                                    <div class="wrapper">
+                                        <span class="m-icon">airwave</span>
+                                        <p class="text-title_1">1052<sub>hPa</sub></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-surface text-on_surface highlight-card">
+                                <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                                    <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Visiblity</h3>
+                                    <div class="wrapper">
+                                        <span class="m-icon">visibility</span>
+                                        <p class="text-title_1">10<sub>km</sub></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card bg-surface text-on_surface highlight-card">
+                                <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                                    <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Feels like</h3>
+                                    <div class="wrapper">
+                                        <span class="m-icon">thermostat</span>
+                                        <p class="text-title_1">25&deg;<sup>c</sup></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </article>
     </main>
 
 </body>
+
 </html>
