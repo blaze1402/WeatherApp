@@ -321,9 +321,41 @@
                                     <p class="text-body_3">25&deg;</p>
                                 </div>
                             </li>
+                            
+                            <li class="slider-item">
+                                <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
+                                    <p class="text-body_3">03 PM</p>
+                                    <img src="assets/images/weather_icons/01n.png" width="48" loading="lazy" class="weather-icon" alt="">
+                                    <p class="text-body_3">25&deg;</p>
+                                </div>
+                            </li>
+                            
+                            <li class="slider-item">
+                                <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
+                                    <p class="text-body_3">03 PM</p>
+                                    <img src="assets/images/weather_icons/01n.png" width="48" loading="lazy" class="weather-icon" alt="">
+                                    <p class="text-body_3">25&deg;</p>
+                                </div>
+                            </li>
                         </ul>
 
                         <ul class="slider-list" data-wind>
+                            <li class="slider-item">
+                                <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
+                                    <p class="text-body_3">03 PM</p>
+                                    <img src="assets/images/weather_icons/direction.png" width="48" loading="lazy" class="weather-icon" alt="">
+                                    <p class="text-body_3">12 km/h</p>
+                                </div>
+                            </li>
+                            
+                            <li class="slider-item">
+                                <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
+                                    <p class="text-body_3">03 PM</p>
+                                    <img src="assets/images/weather_icons/direction.png" width="48" loading="lazy" class="weather-icon" alt="">
+                                    <p class="text-body_3">12 km/h</p>
+                                </div>
+                            </li>
+                            
                             <li class="slider-item">
                                 <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
                                     <p class="text-body_3">03 PM</p>
@@ -376,7 +408,7 @@
                 </section>
 
                 <!-- FOOTER -->
-                <footer class="footer flex flex-wrap justify-center items-center text-on_surface_variant text-center gap-y-3 gap-x-6 ml-7">
+                <footer class="footer flex flex-wrap justify-center items-center text-on_surface_variant text-center gap-y-3 gap-x-6 ml-7 pb-3">
                     <p class="text-body_3 flex flex-wrap justify-center items-center gap-x-2 mt-1">Copyright 2023 <a class="inline" href="https://github.com/blaze1402" target="_blank"> Vijay Kumar Singh &#10084;</a></p>
                     <p class="text-body_3 flex flex-wrap justify-center items-center">All Rights Reserved. </p>
                     <p class="text-body_3 flex flex-wrap justify-center items-center gap-x-2">Powered By<a href="https://openweathermap.org/api" title="Free OpenWeather Api" target="_blank" rel="noopener">
@@ -384,10 +416,20 @@
                     </a></p>
                 </footer>
             </div>
+
+            <div class="loading" data-loading></div>
         </article>
         
     </main>
 
+    <!-- 404 ERROR -->
+    <section class="error-content fixed top-0 left-0 w-full h-full bg-background hidden flex-col items-center justify-center z-10 overflow-hidden" data-error-content>
+        <h2 class="text-white text-heading leading-[1.1]">404</h2>
+        <p class="text-body_1">Page not found!</p>
+        <a href="#" class="bg-primary text-on_primary py-5 px-8 flex items-center rounded-radius_pill mt-5">
+            <span>Go Home</span>
+        </a>
+    </section>
 </body>
 
 </html>
