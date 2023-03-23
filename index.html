@@ -29,7 +29,7 @@
                 <div class="search-wrapper">
                     <input type="search" name="search" placeholder="Search city ..." autocomplete="off"
                         class="search-field" data-search-field>
-                    <span class="m-icon">search</span>
+                    <span class="m-icon leading-icon">search</span>
 
                     <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
                         <span class="m-icon">arrow_back</span>
@@ -55,9 +55,9 @@
                 <button class="icon-btn has-state" aria-label="open search" data-search-toggler>
                     <span class="m-icon icon">search</span>
                 </button>
-                <a href="#/current-location" class="btn-primary bg-primary text-on_primary rounded-radius_circle p-3 has-state" data-current-location-btn>
+                <a href="#/current-location" class="bg-primary text-on_primary leading-[4rem] max-w-fit flex items-center gap-3 rounded-radius_circle p-3 md:h-16 md:rounded-radius_pill md:px-5 xl:h-20 has-state" data-current-location-btn>
                     <span class="m-icon">my_location</span>
-                    <span class="font-semibold hidden">Current Location</span>
+                    <span class="font-semibold hidden md:block">Current Location</span>
                 </a>
             </div>
         </div>
@@ -73,9 +73,9 @@
                 <!-- Current Weather -->
                 <section class="section current-weather" aria-label="current weather" data-current-weather>
                     <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9 current-weather-card">
-                        <h2 class="text-title_2 mb-5 card-title">Now</h2>
+                        <h2 class="text-title_2 xl:text-[2rem] mb-5 card-title">Now</h2>
                         <div class="wrapper">
-                            <p class="text-white text-heading leading-[1.1]">25&deg;<sup class="text-7xl">c</sup></p>
+                            <p class="text-white text-heading xl:text-[8rem] leading-[1.1]">25&deg;<sup class="text-7xl">c</sup></p>
                             <img src="/assets/images/weather_icons/01d.png" width="64" alt="Overcast Clouds"
                                 class="weather-icon">
                         </div>
@@ -96,7 +96,7 @@
 
                 <!-- FORECAST -->
                 <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast>
-                    <h2 class="text-title_2 mb-5" id="forecast-label">5 Days Forecast</h2>
+                    <h2 class="text-title_2 xl:text-[2rem] mb-5" id="forecast-label">5 Days Forecast</h2>
                     <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9 forecast-card">
                         <ul>
                             <li class="card-item">
@@ -104,7 +104,7 @@
                                     <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
                                         class="weather-icon">
                                     <span class="">
-                                        <p class="text-title_2">25&deg;</p>
+                                        <p class="text-title_2 xl:text-[2.2rem]">25&deg;</p>
                                     </span>
                                 </div>
                                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
@@ -115,7 +115,7 @@
                                     <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
                                         class="weather-icon">
                                     <span class="">
-                                        <p class="text-title_2">25&deg;</p>
+                                        <p class="text-title_2 xl:text-[2.2rem]">25&deg;</p>
                                     </span>
                                 </div>
                                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
@@ -126,7 +126,7 @@
                                     <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
                                         class="weather-icon">
                                     <span class="">
-                                        <p class="text-title_2">25&deg;</p>
+                                        <p class="text-title_2 xl:text-[2.2rem]">25&deg;</p>
                                     </span>
                                 </div>
                                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
@@ -137,7 +137,7 @@
                                     <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
                                         class="weather-icon">
                                     <span class="">
-                                        <p class="text-title_2">25&deg;</p>
+                                        <p class="text-title_2 xl:text-[2.2rem]">25&deg;</p>
                                     </span>
                                 </div>
                                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
@@ -148,7 +148,7 @@
                                     <img src="/assets/images/weather_icons/01n.png" width="36" alt="Overcast Clouds"
                                         class="weather-icon">
                                     <span class="">
-                                        <p class="text-title_2">25&deg;</p>
+                                        <p class="text-title_2 xl:text-[2.2rem]">25&deg;</p>
                                     </span>
                                 </div>
                                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">17 Mar</p>
@@ -168,7 +168,7 @@
                 <!-- TODAY'S HIGHLIGHTS -->
                 <section class="section highlights" aria-labelledby="highlights-label" data-highlights>
                     <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9">
-                        <h2 class="text-title_2 mb-5" id="highlights-label">Today's Highlights</h2>
+                        <h2 class="text-title_2 xl:text-[2rem] mb-5" id="highlights-label">Today's Highlights</h2>
                         <div class="highlight-list">
                             <div class="card bg-surface text-on_surface highlight-card one">
                                 <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
@@ -177,22 +177,22 @@
                                         <span class="m-icon">air</span>
                                         <ul class="card-list w-min">
                                             <li class="card-item">
-                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">23.3</p>
                                                 <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
                                             </li>
 
                                             <li class="card-item">
-                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">23.3</p>
                                                 <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
                                             </li>
 
                                             <li class="card-item">
-                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">23.3</p>
                                                 <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
                                             </li>
 
                                             <li class="card-item">
-                                                <p class="text-title_1">23.3</p>
+                                                <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">23.3</p>
                                                 <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
                                             </li>
                                         </ul>
@@ -209,7 +209,7 @@
                                             <span class="m-icon">clear_day</span>
                                             <div>
                                                 <p class="text-label_1 text-on_surface_variant mb-1">Sunrise</p>
-                                                <p class="text-title_1">6:30 AM</p>
+                                                <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">6:30 AM</p>
                                             </div>
                                         </div>
 
@@ -217,7 +217,7 @@
                                             <span class="m-icon">clear_night</span>
                                             <div>
                                                 <p class="text-label_1 text-on_surface_variant mb-1">Sunset</p>
-                                                <p class="text-title_1">5:54 PM</p>
+                                                <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">5:54 PM</p>
                                             </div>
                                         </div>
 
@@ -231,7 +231,7 @@
                                     <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Humidity</h3>
                                     <div class="wrapper">
                                         <span class="m-icon">humidity_percentage</span>
-                                        <p class="text-title_1">35<sub>%</sub></p>
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">35<sub>%</sub></p>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +241,7 @@
                                     <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Pressure</h3>
                                     <div class="wrapper">
                                         <span class="m-icon">airwave</span>
-                                        <p class="text-title_1">1052<sub>hPa</sub></p>
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">1052<sub>hPa</sub></p>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +251,7 @@
                                     <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Visiblity</h3>
                                     <div class="wrapper">
                                         <span class="m-icon">visibility</span>
-                                        <p class="text-title_1">10<sub>km</sub></p>
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">10<sub>km</sub></p>
                                     </div>
                                 </div>
                             </div>
@@ -261,7 +261,7 @@
                                     <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Feels like</h3>
                                     <div class="wrapper">
                                         <span class="m-icon">thermostat</span>
-                                        <p class="text-title_1">25&deg;<sup>c</sup></p>
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-[3.6rem]">25&deg;<sup>c</sup></p>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +271,7 @@
 
                 <!-- HOURLY FORECAST -->
                 <section class="section hourly-forecast" aria-label="hourly-forecast" data-hourly-forecast>
-                    <h2 class="text-title_2 mb-5">Today at</h2>
+                    <h2 class="text-title_2 xl:text-[2rem] mb-5">Today at</h2>
                     <div class="slider-container">
                         <ul class="slider-list" data-temp>
                             <li class="slider-item">
@@ -424,7 +424,7 @@
 
     <!-- 404 ERROR -->
     <section class="error-content fixed top-0 left-0 w-full h-full bg-background hidden flex-col items-center justify-center z-10 overflow-hidden" data-error-content>
-        <h2 class="text-white text-heading leading-[1.1]">404</h2>
+        <h2 class="text-white text-heading xl:text-[8rem] leading-[1.1]">404</h2>
         <p class="text-body_1">Page not found!</p>
         <a href="#" class="bg-primary text-on_primary py-5 px-8 flex items-center rounded-radius_pill mt-5">
             <span>Go Home</span>
