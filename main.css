@@ -201,7 +201,7 @@
     .search-wrapper:has(.searching)::before {@apply block;}
 
     .search-field {
-        @apply h-24 leading-[96px] outline-none;
+        @apply h-20 leading-[96px] outline-none;
         padding-inline: 56px 16px;
     }
 
@@ -235,7 +235,7 @@
     }
 
     article.container {
-        @apply relative grid gap-9 h-full overflow-y-auto;
+        @apply -mt-3 md:-mt-[18px] relative grid gap-9 h-full overflow-y-auto;
         grid-template-columns: minmax(0, 1fr);
         overflow-y: overlay;
     }
@@ -432,6 +432,7 @@
         }
 
         .content-left {
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
         }
@@ -444,10 +445,10 @@
 
         .highlight-card:nth-child(-n+2) {
             grid-column: span 2;
-            height: 160px;
+            /* height: 160px; */
         }
 
-        .highlight-card:nth-child(n+3) {height: 120px;}
+        .highlight-card:nth-child(n+3) {height: 120px;}  
 
         .highlights .m-icon {font-size: 3.6rem;}
 
@@ -552,18 +553,18 @@
 
         article.container {
             grid-template-columns: 360px minmax(0, 1fr);
-            gap: 40px;
+            /* gap: 40px; */
         }
 
         .current-weather .weather-icon {width: 80px;}
 
         .highlight-list { grid-template-columns: repeat(4, 1fr);}
 
-        .highlight-card:nth-child(-n+2) {height: 200px;}
+        /* .highlight-card:nth-child(-n+2) {height: 200px;} */
 
-        .highlight-card:nth-child(n+3) {height: 150px;}
+        /* .highlight-card:nth-child(n+3) {height: 150px;} */
 
-        .highlight-card .m-icon {font-size: 4.8rem;}
+        .highlight-card .m-icon {font-size: 4.5rem;}
 
         .slider-list {gap: 16px;}
 
