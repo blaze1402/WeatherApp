@@ -159,7 +159,124 @@ export const updateWeather = (lat, lon) => {
 
         currentWeatherSection.appendChild(card);
 
-        
+        /**
+         * TODAY'S HIGHLIGHTS
+         */
+        fetchData(url.airPollution(lat, lon), (airPollution)=>{
+
+            const [{
+                main : { aqi },
+                components : { no2, o3, so2, pm2_5 }
+            }] =airPollution.list;
+
+            const card = document.createElement("div");
+            card.classList.add("card-lg", "bg-surface", "text-on_surface", "rounded-radius_28", "p-9")
+
+            card.innerHTML = `
+                <h2 class="text-title_2 xl:text-[2rem] mb-5" id="highlights-label">Today's Highlights</h2>
+                <div class="highlight-list">
+                    <div class="card bg-surface text-on_surface highlight-card one">
+                        <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                            <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Air Quality
+                                Index</h3>
+                            <div class="wrapper">
+                                <span class="m-icon">air</span>
+                                <ul class="card-list w-min">
+                                    <li class="card-item">
+                                        <p class="text-title_1 md:text- xl:text-5xl">${pm2_5.toPrecision(3)}</p>
+                                        <p class="text-label_1 text-on_surface_variant">PM<sub>2.5</sub></p>
+                                    </li>
+
+                                    <li class="card-item">
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${so2.toPrecision(3)}</p>
+                                        <p class="text-label_1 text-on_surface_variant">SO<sub>2</sub></p>
+                                    </li>
+
+                                    <li class="card-item">
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${no2.toPrecision(3)}</p>
+                                        <p class="text-label_1 text-on_surface_variant">NO<sub>2</sub></p>
+                                    </li>
+
+                                    <li class="card-item">
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${o3.toPrecision(3)}</p>
+                                        <p class="text-label_1 text-on_surface_variant">O<sub>3</sub></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="badge aqi-${aqi} text-label_${aqi}" title="${module.aqiText[aqi].message}">${module.aqiText[aqi].level}</span>
+                        </div>
+                    </div>
+
+                    <div class="card bg-surface text-on_surface highlight-card two">
+                        <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                            <h2 class="text-title_3 font-semibold text-on_surface_variant mb-5">Sunrise & Sunset
+                            </h2>
+                            <div class="card-list">
+                                <div class="card-item">
+                                    <span class="m-icon">clear_day</span>
+                                    <div>
+                                        <p class="text-label_1 text-on_surface_variant mb-1">Sunrise</p>
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${module.getTime(sunriseUnixUTC, timezone)}</p>
+                                    </div>
+                                </div>
+
+                                <div class="card-item">
+                                    <span class="m-icon">clear_night</span>
+                                    <div>
+                                        <p class="text-label_1 text-on_surface_variant mb-1">Sunset</p>
+                                        <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${module.getTime(sunsetUnixUTC, timezone)}</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-surface text-on_surface highlight-card">
+                        <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                            <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Humidity</h3>
+                            <div class="wrapper">
+                                <span class="m-icon">humidity_percentage</span>
+                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${humidity}<sub>%</sub></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-surface text-on_surface highlight-card">
+                        <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                            <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Pressure</h3>
+                            <div class="wrapper">
+                                <span class="m-icon">airwave</span>
+                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${pressure}<sub>hPa</sub></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-surface text-on_surface highlight-card">
+                        <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                            <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Visibility</h3>
+                            <div class="wrapper">
+                                <span class="m-icon">visibility</span>
+                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${visibility / 1000}<sub>km</sub></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card bg-surface text-on_surface highlight-card">
+                        <div class="card-sm rounded-radius_16 p-8 bg-black_alpha_10 relative">
+                            <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Feels like</h3>
+                            <div class="wrapper">
+                                <span class="m-icon">thermostat</span>
+                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${parseInt(feels_like)}&deg;<sup>c</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            highlightSection.appendChild(card);
+        });
 
 
     });
