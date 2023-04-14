@@ -162,12 +162,12 @@ export const updateWeather = (lat, lon) => {
         /**
          * TODAY'S HIGHLIGHTS
          */
-        fetchData(url.airPollution(lat, lon), (airPollution)=>{
+        fetchData(url.airPollution(lat, lon), (airPollution) => {
 
             const [{
-                main : { aqi },
-                components : { no2, o3, so2, pm2_5 }
-            }] =airPollution.list;
+                main: { aqi },
+                components: { no2, o3, so2, pm2_5 }
+            }] = airPollution.list;
 
             const card = document.createElement("div");
             card.classList.add("card-lg", "bg-surface", "text-on_surface", "rounded-radius_28", "p-9")
@@ -274,10 +274,76 @@ export const updateWeather = (lat, lon) => {
                     </div>
                 </div>
             `;
-            
+
             highlightSection.appendChild(card);
         });
 
+        /**
+         * HOURLY FORECAST
+         */
+        fetchData(url.forecast(lat, lon), (forecast) => {
+
+            const {
+                list: forecastList,
+                city: { timezone }
+            } = forecast;
+
+            hourlySection.innerHTML = `
+                <h2 class="text-title_2 xl:text-[2rem] mb-5">Today at</h2>
+                <div class="slider-container">
+                    <ul class="slider-list" data-temp></ul>
+
+                    <ul class="slider-list" data-wind></ul>
+                </div>
+            `;
+
+            for (const [index, data] of forecastList.entries()) {
+
+                if (index > 7) break;
+
+                const {
+                    dt: dateTimeUnix,
+                    main: { temp },
+                    weather,
+                    wind: { deg: windDirection, speed: windSpeed }
+                } = data;
+                const [{icon, description}] = weather;
+
+                const tempLi = document.createElement("li");
+                tempLi.classList.add("slider-item");
+
+                tempLi.innerHTML = `
+                    <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
+                        
+                        <p class="text-body_3">${module.getHours(dateTimeUnix, timezone)}</p>
+                        
+                        <img src="./assets/images/weather_icons/${icon}.png" width="48" loading="lazy"
+                            class="weather-icon" alt="${description}" title="${description}">
+                        
+                        <p class="text-body_3">${parseInt(temp)}&deg;</p>
+                    </div>
+                `;
+                hourlySection.querySelector("[data-temp]").appendChild(tempLi);
+
+                const windLi = document.createElement("li");
+                windLi.classList.add("slider-item");
+
+                windLi.innerHTML = `
+                    <div class="card-sm slider-card rounded-radius_16 p-8 bg-white_alpha_8 relative">
+                        
+                        <p class="text-body_3">${module.getHours(dateTimeUnix, timezone)}</p>
+                        
+                        <img src="assets/images/weather_icons/direction.png" width="48" loading="lazy"
+                            class="weather-icon" alt="direction" style="transform: rotate(${windDirection - 180}deg)">
+                        
+                        <p class="text-body_3">${parseInt(module.mps_to_kmh(windSpeed))} km/h</p>
+                    </div>
+                `;
+                hourlySection.querySelector("[data-wind]").appendChild(windLi);
+            
+            }
+
+        });
 
     });
 
