@@ -137,7 +137,7 @@ export const updateWeather = (lat, lon) => {
             <div class="wrapper">
                 <p class="text-white text-heading xl:text-[8rem] leading-[1.1]">${parseInt(temp)}&deg;<sup
                         class="text-7xl">c</sup></p>
-                <img src="/assets/images/weather_icons/${icon}.png" width="64" alt="${description}"
+                <img src="/static/images/weather_icons/${icon}.png" width="64" alt="${description}"
                     class="weather-icon">
             </div>
             <p class="text-body_3">${description}</p>
@@ -317,7 +317,7 @@ export const updateWeather = (lat, lon) => {
                         
                         <p class="text-body_3">${module.getHours(dateTimeUnix, timezone)}</p>
                         
-                        <img src="./assets/images/weather_icons/${icon}.png" width="48" loading="lazy"
+                        <img src="/static/images/weather_icons/${icon}.png" width="48" loading="lazy"
                             class="weather-icon" alt="${description}" title="${description}">
                         
                         <p class="text-body_3">${parseInt(temp)}&deg;</p>
@@ -333,7 +333,7 @@ export const updateWeather = (lat, lon) => {
                         
                         <p class="text-body_3">${module.getHours(dateTimeUnix, timezone)}</p>
                         
-                        <img src="assets/images/weather_icons/direction.png" width="48" loading="lazy"
+                        <img src="/static/images/weather_icons/direction.png" width="48" loading="lazy"
                             class="weather-icon" alt="direction" style="transform: rotate(${windDirection - 180}deg)">
                         
                         <p class="text-body_3">${parseInt(module.mps_to_kmh(windSpeed))} km/h</p>
