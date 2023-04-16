@@ -143,7 +143,7 @@
 
     /* .card-lg {@apply rounded-radius_28 p-9;} */
 
-    /* .card-sm {@apply rounded-radius_16 p-8;} */
+    .card-sm {@apply rounded-radius_16 p-8;}
 
     /* .heading {@apply text-white text-heading leading-[1.1];} */
 
