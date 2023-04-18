@@ -149,10 +149,10 @@
 
     /* .title-1 {@apply text-title_1;} */
 
-    /* .title-2 {
-        @apply text-title_2;
-        margin-block-end: 12px;
-    } */
+    .text-title_2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
 
     /* .title-3 {@apply text-title_3 font-semibold;} */
 
@@ -162,6 +162,10 @@
 
     /* .label-1 {@apply text-label_1} */
     /* .label-2 {@apply text-label_2} */
+
+    .mb-5 {
+        margin-bottom: 10px;
+    }
 
     .fade-in { animation: fade-in 250ms ease forwards;}
 
