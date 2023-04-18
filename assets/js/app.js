@@ -93,9 +93,9 @@ const errorContent = document.querySelector("[data-error-content]");
  * @param {number} lon Longitude
  */
 export const updateWeather = (lat, lon) => {
-    // loading.style.display = "grid";
-    // container.style.overflowY = "hidden";
-    // container.classList.remove("fade-in");
+    loading.style.display = "grid";
+    container.style.overflowY = "hidden";
+    container.classList.remove("fade-in");
     errorContent.style.display = "none";
 
     const currentWeatherSection = document.querySelector("[data-current-weather]");
@@ -343,12 +343,52 @@ export const updateWeather = (lat, lon) => {
             
             }
 
+        /**
+         * 5 DAYS FORECAST
+         */
+        forecastSection.innerHTML = `   
+        <h2 class="text-title_2 xl:text-[2rem] mb-5" id="forecast-label">5 Days Forecast</h2>
+        <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9 forecast-card">
+            <ul data-forecast-list></ul>
+        </div>
+        `;
+
+        for (let i=7; i<forecastList.length; i+=8){
+
+            const {
+                main: {temp_max},
+                weather,
+                dt_txt
+            } = forecastList[i];
+            const [{icon, description}] =weather;
+            const date=new Date(dt_txt);
+
+            const li=document.createElement("li");
+            li.classList.add("card-item")
+
+            li.innerHTML =  `
+                <div class="icon-wrapper">
+                    <img src="/static/images/weather_icons/${icon}.png" width="36" alt="${description}"
+                        class="weather-icon" title="${description}">
+                    <span class="">
+                        <p class="text-title_2 xl:text-[2.2rem]">${parseInt(temp_max)}&deg;</p>
+                    </span>
+                </div>
+                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${date.getDate()} ${module.monthNames[date.getUTCMonth()]}</p>
+                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${module.weekDayNames[date.getUTCDay()]}</p>
+            `;
+            forecastSection.querySelector("[data-forecast-list]").appendChild(li);
+
+        }
+        
+        loading.style.display = "none";
+        container.style.overflowY = "overlay";
+        container.classList.add("fade-in");
+
         });
 
     });
 
 }
 
-export const error404 = () => {
-
-}
+export const error404 = () => errorContent.style.display = "flex";
