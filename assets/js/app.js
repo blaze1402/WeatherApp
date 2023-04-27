@@ -352,8 +352,13 @@ export const updateWeather = (lat, lon) => {
             <ul data-forecast-list></ul>
         </div>
         `;
-
-        for (let i=7; i<forecastList.length; i+=8){
+        
+        let i=1;
+        if (timezone>0){
+            i=7;
+        }
+        
+        for (i; i<forecastList.length; i+=8){
 
             const {
                 main: {temp_max},
