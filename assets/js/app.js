@@ -374,8 +374,8 @@ export const updateWeather = (lat, lon) => {
                         <p class="text-title_2 xl:text-[2.2rem]">${parseInt(temp_max)}&deg;</p>
                     </span>
                 </div>
-                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${date.getDate()} ${module.monthNames[date.getUTCMonth()]}</p>
-                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${module.weekDayNames[date.getUTCDay()]}</p>
+                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${date.getDate()} ${module.monthNames[date.getMonth()]}</p>
+                <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${module.weekDayNames[date.getDay()]}</p>
             `;
             forecastSection.querySelector("[data-forecast-list]").appendChild(li);
 
