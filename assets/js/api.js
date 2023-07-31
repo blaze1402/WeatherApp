@@ -1,6 +1,6 @@
 'use strict';
 
-const api_key = "dad2320df468f78e24382c25b3ed25e9";
+const api_key = import.meta.env.VITE_API_KEY;
 
 /**
  * Fetch data from server

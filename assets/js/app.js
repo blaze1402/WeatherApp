@@ -140,7 +140,7 @@ export const updateWeather = (lat, lon) => {
                 <img src="/static/images/weather_icons/${icon}.png" width="64" alt="${description}"
                     class="weather-icon">
             </div>
-            <p class="text-body_3">${description}</p>
+            <p class="text-body_3">${description.split(' ').map((word) => (word.charAt(0).toUpperCase() + word.slice(1))).join(' ')}</p>
             <ul class="meta-list">
                 <li class="meta-item">
                     <span class="m-icon text-on_surface">calendar_today</span>
@@ -248,7 +248,7 @@ export const updateWeather = (lat, lon) => {
                             <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Pressure</h3>
                             <div class="wrapper">
                                 <span class="m-icon">airwave</span>
-                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${pressure}<sub>hPa</sub></p>
+                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${pressure} <sub>hPa</sub></p>
                             </div>
                         </div>
                     </div>
@@ -258,7 +258,7 @@ export const updateWeather = (lat, lon) => {
                             <h3 class="text-title_3 font-semibold text-on_surface_variant mb-5">Visibility</h3>
                             <div class="wrapper">
                                 <span class="m-icon">visibility</span>
-                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${visibility / 1000}<sub>km</sub></p>
+                                <p class="text-title_1 md:text-[2.4rem] xl:text-5xl">${visibility / 1000} <sub>km</sub></p>
                             </div>
                         </div>
                     </div>
@@ -307,7 +307,7 @@ export const updateWeather = (lat, lon) => {
                     weather,
                     wind: { deg: windDirection, speed: windSpeed }
                 } = data;
-                const [{icon, description}] = weather;
+                const [{ icon, description }] = weather;
 
                 const tempLi = document.createElement("li");
                 tempLi.classList.add("slider-item");
@@ -340,38 +340,38 @@ export const updateWeather = (lat, lon) => {
                     </div>
                 `;
                 hourlySection.querySelector("[data-wind]").appendChild(windLi);
-            
+
             }
 
-        /**
-         * 5 DAYS FORECAST
-         */
-        forecastSection.innerHTML = `   
+            /**
+             * 5 DAYS FORECAST
+             */
+            forecastSection.innerHTML = `   
         <h2 class="text-title_2 xl:text-[2rem] mb-5" id="forecast-label">5 Days Forecast</h2>
         <div class="card-lg bg-surface text-on_surface rounded-radius_28 p-9 forecast-card">
             <ul data-forecast-list></ul>
         </div>
         `;
-        
-        let i=1;
-        if (timezone>0){
-            i=7;
-        }
-        
-        for (i; i<forecastList.length; i+=8){
 
-            const {
-                main: {temp_max},
-                weather,
-                dt_txt
-            } = forecastList[i];
-            const [{icon, description}] =weather;
-            const date=new Date(dt_txt);
+            let i = 1;
+            if (timezone > 0) {
+                i = 7;
+            }
 
-            const li=document.createElement("li");
-            li.classList.add("card-item")
+            for (i; i < forecastList.length; i += 8) {
 
-            li.innerHTML =  `
+                const {
+                    main: { temp_max },
+                    weather,
+                    dt_txt
+                } = forecastList[i];
+                const [{ icon, description }] = weather;
+                const date = new Date(dt_txt);
+
+                const li = document.createElement("li");
+                li.classList.add("card-item")
+
+                li.innerHTML = `
                 <div class="icon-wrapper">
                     <img src="/static/images/weather_icons/${icon}.png" width="36" alt="${description}"
                         class="weather-icon" title="${description}">
@@ -382,13 +382,13 @@ export const updateWeather = (lat, lon) => {
                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${date.getDate()} ${module.monthNames[date.getMonth()]}</p>
                 <p class="text-label_1 text-on_surface_variant font-semibold w-full text-right">${module.weekDayNames[date.getDay()]}</p>
             `;
-            forecastSection.querySelector("[data-forecast-list]").appendChild(li);
+                forecastSection.querySelector("[data-forecast-list]").appendChild(li);
 
-        }
-        
-        loading.style.display = "none";
-        container.style.overflowY = "overlay";
-        container.classList.add("fade-in");
+            }
+
+            loading.style.display = "none";
+            container.style.overflowY = "overlay";
+            container.classList.add("fade-in");
 
         });
 
